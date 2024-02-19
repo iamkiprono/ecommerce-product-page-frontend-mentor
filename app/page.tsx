@@ -5,6 +5,7 @@ import { CartDropDown } from "./LocalComponents/CartDropdown";
 
 import { toast } from "react-toastify";
 import { LightBox } from "./LocalComponents/LightBox";
+import Image from "next/image";
 
 export type cart = {
   name: string;
@@ -53,7 +54,7 @@ function NavComponent({
       <div className="flex justify-between p-4 items-center">
         <div className="flex gap-4 items-center">
           <div>
-            <img src="/logo.svg" alt="" />
+            <Image width={150} height={150} src="/logo.svg" alt="" />
           </div>
 
           <div className="hidden md:visible md:flex items-center gap-4 text-gray-500">
@@ -72,7 +73,13 @@ function NavComponent({
             <CartDropDown clearCart={clearCart} cart={cart} />
           </div>
           <div>
-            <img className="w-10" src="/image-avatar.png" alt="" />
+            <Image
+              width={25}
+              height={25}
+              className="w-10"
+              src="/image-avatar.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -92,7 +99,9 @@ function Hero({ update }: { update: (n: cart) => void }) {
   const imageSwitcher = () => {
     return Array.from(new Array(4)).map((x, i) => {
       return (
-        <img
+        <Image
+          width={50}
+          height={50}
           onClick={() => setActiveImage(`image-product-${i + 1}`)}
           key={i}
           className={`w-20 rounded-md cursor-pointer hover:opacity-35 transition-opacity ${
@@ -112,7 +121,9 @@ function Hero({ update }: { update: (n: cart) => void }) {
       <div className="md:w-[50%]  flex flex-col justify-center items-center">
         <div className="md:w-3/4 rounded-3xl relative">
           {imagePosition !== 1 && (
-            <img
+            <Image
+              width={25}
+              height={25}
               onClick={() => {
                 if (imagePosition >= 1) {
                   setImagePosition((prevPosition) => prevPosition - 1);
@@ -125,14 +136,18 @@ function Hero({ update }: { update: (n: cart) => void }) {
             />
           )}
           <LightBox switcher={imageSwitcher}>
-            <img
+            <Image
+              width={500}
+              height={500}
               className=" md:rounded-3xl"
               src={`/${activeImage}.jpg`}
               alt=""
             />
           </LightBox>
           {imagePosition !== 4 && (
-            <img
+            <Image
+              width={25}
+              height={25}
               onClick={() => {
                 if (imagePosition <= 3) {
                   setImagePosition((prevPosition) => prevPosition + 1);
@@ -174,14 +189,14 @@ function Hero({ update }: { update: (n: cart) => void }) {
                 onClick={() => setQuantity((prevQuantity) => prevQuantity - 1)}
                 className="font-bold text-2xl text-Orange"
               >
-                <img src="/icon-minus.svg" alt="" />
+                <Image width={10} height={10} src="/icon-minus.svg" alt="" />
               </button>
               <p className="font-bold  text-black">{quantity}</p>
               <button
                 onClick={() => setQuantity((prevQuantity) => prevQuantity + 1)}
                 className="font-bold text-2xl cursor-pointer  text-Orange"
               >
-                <img src="/icon-plus.svg" alt="" />
+                <Image width={10} height={10} src="/icon-plus.svg" alt="" />
               </button>
             </div>
             <div
@@ -195,7 +210,13 @@ function Hero({ update }: { update: (n: cart) => void }) {
               }
               className="px-12 py-2 bg-Orange rounded flex items-center justify-center cursor-pointer text-white  gap-2"
             >
-              <img src="/icon-cart.svg" alt="" />
+              <Image
+                className="text-white"
+                width={25}
+                height={25}
+                src="/icon-cart.svg"
+                alt=""
+              />
               Add to Cart
             </div>
           </div>

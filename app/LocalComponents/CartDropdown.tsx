@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cart } from "../page";
+import Image from "next/image";
 
 export function CartDropDown({
   cart,
@@ -25,7 +26,9 @@ export function CartDropDown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <img
+        <Image
+          width={20}
+          height={20}
           className="w-8 cursor-pointer  transition-all "
           src="/icon-cart.svg"
           alt=""
@@ -43,7 +46,13 @@ export function CartDropDown({
 
               <div key={i} className="flex gap-2 items-center py-2">
                 <div>
-                  <img className="w-10" src={x?.image} alt="" />
+                  <Image
+                    width={25}
+                    height={25}
+                    className="w-10"
+                    src={`/${x?.image}`}
+                    alt=""
+                  />
                 </div>
                 <div>
                   <p className="text-sm">{x?.name}</p>
@@ -61,7 +70,7 @@ export function CartDropDown({
                   }}
                   className="ml-4 cursor-pointer"
                 >
-                  <img src="/icon-delete.svg" alt="" />
+                  <Image width={15} height={15} src="/icon-delete.svg" alt="" />
                 </div>
               </div>
             </>
