@@ -122,8 +122,8 @@ function Hero({ update }: { update: (n: cart) => void }) {
         <div className="md:w-3/4 rounded-3xl relative">
           {imagePosition !== 1 && (
             <Image
-              width={25}
-              height={25}
+              width={50}
+              height={50}
               onClick={() => {
                 if (imagePosition >= 1) {
                   setImagePosition((prevPosition) => prevPosition - 1);
@@ -146,8 +146,8 @@ function Hero({ update }: { update: (n: cart) => void }) {
           </LightBox>
           {imagePosition !== 4 && (
             <Image
-              width={25}
-              height={25}
+              width={50}
+              height={50}
               onClick={() => {
                 if (imagePosition <= 3) {
                   setImagePosition((prevPosition) => prevPosition + 1);
