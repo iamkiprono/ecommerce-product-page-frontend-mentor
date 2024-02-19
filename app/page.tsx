@@ -214,7 +214,7 @@ function Hero({ update }: { update: (n: cart) => void }) {
                 className="text-white"
                 width={25}
                 height={25}
-                src="/icon-cart.svg"
+                src="/icon-cart white.svg"
                 alt=""
               />
               Add to Cart
