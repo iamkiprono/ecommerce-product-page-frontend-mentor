@@ -175,12 +175,12 @@ function Hero({ update }: { update: (n: cart) => void }) {
           </p>
           <div className="flex md:flex-col flex-row md:items-start items-center justify-between">
             <p className="text-4xl font-bold flex items-center">
-              $ 125
+              $125.00
               <span className="text-Orange ml-4 bg-Pale_orange text-sm p-2 rounded">
                 50%
               </span>
             </p>
-            <p className="text-gray-500 line-through">$ 250</p>
+            <p className="text-gray-500 line-through">$250.00</p>
           </div>
           <div className="flex gap-4 md:flex-row flex-col">
             <div className="flex gap-4 items-center bg-gray-100 md:w-fit px-12 py-2 justify-between">
